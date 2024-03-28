@@ -35,9 +35,25 @@
             app:popUpToInclusive="true"
             app:popUpTo="@id/splashFragment"
             app:destination="@id/navigation_home" />
+
+        <action
+            android:id="@+id/action_splashFragment_to_navigation_Login"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/splashFragment"
+            app:destination="@id/loginFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.base.hilt.ui.login.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_navigation_Create"
+            app:destination="@id/createAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAccountFragment"
+        android:name="com.base.hilt.ui.createAccount.CreateAccountFragment"
+        android:label="CreateAccountFragment" />
 </navigation>
