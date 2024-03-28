@@ -8,17 +8,8 @@ import com.base.hilt.network.ResponseHandler
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
-@HiltViewModel
-class HomeViewModel @Inject constructor(private val homeRepository: HomeRepository) :
-    ViewModelBase() {
-    var responseLiveHomeVendorListResponse =
-        MutableLiveData<ResponseHandler<ResponseData<HomeScreenVendorsListResponse>?>>()
-
-    fun callApi() {
-        viewModelScope.launch {
-            responseLiveHomeVendorListResponse.postValue(ResponseHandler.Loading)
-            responseLiveHomeVendorListResponse.value = homeRepository.callHomeScreenAPI()
-        }
-    }
-}
+//
+//@HiltViewModel
+//class HomeViewModel :
+//    ViewModelBase() {
+//}

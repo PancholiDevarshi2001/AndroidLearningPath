@@ -11,7 +11,7 @@ import dagger.hilt.android.scopes.ViewModelScoped
 @Module
 @InstallIn(ViewModelComponent::class)
 class RepositoryModule {
-    @Provides
-    @ViewModelScoped
-    fun provideHomeRepository(apiInterface: ApiInterface) = HomeRepository(apiInterface)
+//    @Provides
+//    @ViewModelScoped
+//    fun provideHomeRepository(apiInterface: ApiInterface) = HomeRepository(apiInterface)
 }

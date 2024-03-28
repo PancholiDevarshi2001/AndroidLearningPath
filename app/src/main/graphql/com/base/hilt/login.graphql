@@ -1,0 +1,26 @@
+mutation Login($input : LoginInput!){
+    login(input:$input){
+        meta{
+            message
+            message_code
+            status
+            status_code
+        }
+        data{
+            access_token
+            user {
+                alias
+                avatar
+                dob
+                email
+                first_name
+                id
+                last_name
+                mobile_number
+                original_avatar
+                uuid
+            }
+        }
+    }
+    
+}

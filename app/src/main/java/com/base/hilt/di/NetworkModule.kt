@@ -1,5 +1,8 @@
 package com.base.hilt.di
 
+import android.content.Context
+import com.apollographql.apollo3.ApolloClient
+import com.apollographql.apollo3.network.okHttpClient
 import com.base.hilt.BuildConfig
 import com.base.hilt.ConfigFiles
 import com.base.hilt.network.ApiInterface
@@ -8,6 +11,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ViewModelComponent
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.android.scopes.ViewModelScoped
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -41,23 +45,45 @@ class NetworkModule {
     @Provides
     fun provideHttpHandleIntercept(): HttpHandleIntercept = HttpHandleIntercept()
 
+    /**
+     * generate OKhttp client
+     */
+
+
 
     /**
      * generate OKhttp client
      */
     @Provides
-    fun getOkHttpClient(httpHandleIntercept: HttpHandleIntercept): OkHttpClient {
+    fun getOkHttpClient(
+        httpHandleIntercept: HttpHandleIntercept,
+        authorizationInterceptor: AuthorizationInterceptor, @ApplicationContext context: Context,
+    ): OkHttpClient {
         val logging = HttpLoggingInterceptor()
         if (BuildConfig.DEBUG) logging.level = HttpLoggingInterceptor.Level.BODY
         val builder = OkHttpClient.Builder()
-        builder.addInterceptor(logging)
+
         builder.readTimeout(60, TimeUnit.SECONDS)
             .connectTimeout(60, TimeUnit.SECONDS)
             .addInterceptor(httpHandleIntercept)
+            .addInterceptor(authorizationInterceptor)
+            .addInterceptor(logging)
             .build()
 
         return builder.build()
     }
+
+    @Provides
+    fun providesAuthorizationInterceptor():AuthorizationInterceptor =AuthorizationInterceptor()
+
+    @Provides
+    fun getApolloClient(okHttpClient: OkHttpClient): ApolloClient {
+        return ApolloClient.Builder()
+            .serverUrl("https://vmeapi.demo.brainvire.dev/graphql")
+            .okHttpClient(okHttpClient)
+            .build()
+    }
+
 }
 
 @Qualifier

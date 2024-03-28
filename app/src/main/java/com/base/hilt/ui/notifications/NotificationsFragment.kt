@@ -6,6 +6,7 @@ import com.base.hilt.R
 import com.base.hilt.base.FragmentBase
 import com.base.hilt.base.LocaleManager
 import com.base.hilt.base.ToolbarModel
+import com.base.hilt.base.ViewModelBase
 import com.base.hilt.databinding.FragmentNotificationsBinding
 import com.base.hilt.utils.MyPreference
 import com.base.hilt.utils.PrefKey
@@ -13,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class NotificationsFragment : FragmentBase<NotificationsViewModel, FragmentNotificationsBinding>() {
+class NotificationsFragment : FragmentBase<ViewModelBase, FragmentNotificationsBinding>() {
 
     @Inject
     lateinit var localeManager: LocaleManager
@@ -30,37 +31,16 @@ class NotificationsFragment : FragmentBase<NotificationsViewModel, FragmentNotif
 
     override fun initializeScreenVariables() {
 
-        getDataBinding().viewModel = viewModel
-        when (mPref.getValueString(
-            PrefKey.SELECTED_LANGUAGE,
-            PrefKey.EN_CODE
-        )) {
-            PrefKey.EN_CODE ->
-                getDataBinding().btnEnglish.isChecked = true
-            else ->
-                getDataBinding().btnArabic.isChecked = true
-        }
+//        getDataBinding().viewModel = viewModel
+
         observeData()
     }
 
     private fun observeData() {
-        viewModel.chnageLanguageClick.observe(this, {
-            if (getDataBinding().btnEnglish.isChecked) {
-                mPref.setValueString(PrefKey.SELECTED_LANGUAGE, PrefKey.EN_CODE)
-            } else {
-                mPref.setValueString(PrefKey.SELECTED_LANGUAGE, PrefKey.AR_CODE)
-            }
-            localeManager.setNewLocale(
-                activity as MainActivity,
-                mPref.getValueString(PrefKey.SELECTED_LANGUAGE, PrefKey.AR_CODE).toString()
-            )
-            val intent = Intent(context, MainActivity::class.java)
-            startActivity(intent)
-            requireActivity().finish()
-        })
+
     }
 
-    override fun getViewModelClass(): Class<NotificationsViewModel> =
-        NotificationsViewModel::class.java
+    override fun getViewModelClass(): Class<ViewModelBase> =
+        ViewModelBase::class.java
 
 }

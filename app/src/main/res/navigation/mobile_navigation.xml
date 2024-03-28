@@ -9,7 +9,11 @@
         android:id="@+id/navigation_home"
         android:name="com.base.hilt.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_dashboard"
@@ -32,4 +36,8 @@
             app:popUpTo="@id/splashFragment"
             app:destination="@id/navigation_home" />
     </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.base.hilt.ui.login.LoginFragment"
+        android:label="LoginFragment" />
 </navigation>
