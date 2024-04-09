@@ -53,7 +53,7 @@ class SplashFragment : FragmentBase<SplashViewModel, FragmentSplashBinding>() {
         super.onResume()
         GlobalScope.launch(context = Dispatchers.Main) {
             delay(3000)
-            val action = SplashFragmentDirections.actionSplashFragmentToNavigationHome()
+            val action = SplashFragmentDirections.actionSplashFragmentToNavigationLogin()
             getDataBinding().main.findNavController().navigate(action)
         }
     }

@@ -51,9 +51,16 @@
         <action
             android:id="@+id/action_LoginFragment_to_navigation_Create"
             app:destination="@id/createAccountFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
     </fragment>
     <fragment
         android:id="@+id/createAccountFragment"
         android:name="com.base.hilt.ui.createAccount.CreateAccountFragment"
-        android:label="CreateAccountFragment" />
+        android:label="CreateAccountFragment" >
+        <action
+            android:id="@+id/action_createAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

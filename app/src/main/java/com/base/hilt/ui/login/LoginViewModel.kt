@@ -7,6 +7,7 @@ import com.base.hilt.LoginMutation
 import com.base.hilt.UserDataQuery
 import com.base.hilt.base.ViewModelBase
 import com.base.hilt.domain.repository.UserRepository
+import com.base.hilt.network.ResponseHandler
 import com.base.hilt.type.LoginInput
 import com.base.hilt.utils.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,21 +16,13 @@ import javax.inject.Inject
 @HiltViewModel
 class LoginViewModel @Inject constructor(private val repo : LoginRepository):ViewModelBase() {
 
-    val apicallLiveData = SingleLiveEvent<ApolloResponse<LoginMutation.Data>>()
+    val apicallLiveData = SingleLiveEvent<ResponseHandler<ApolloResponse<LoginMutation.Data>>?>()
 
     fun callLoginApiModel(input: LoginInput){
         viewModelScope.launch {
-            try {
-                Log.i("madmad", "callAPi: 11e")
-                apicallLiveData.postValue(repo.callLoginApi(input))
-                apicallLiveData.value = (repo.callLoginApi(input))
-
-            }catch (e:Exception){
-                Log.i("madmad", "callAPi: e")
-            }
+                apicallLiveData.postValue(ResponseHandler.Loading)
+                val result = repo.callLoginApi(input)
+                apicallLiveData.postValue(result)
         }
-
     }
-
-
 }

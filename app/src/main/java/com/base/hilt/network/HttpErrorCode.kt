@@ -1,11 +1,13 @@
 package com.base.hilt.network
 
+import android.view.textclassifier.ConversationActions.Message
+
 /**
  * Package Name : com.kotlinusermodule.network.model
  * Project Name : BrainvireStructure
  */
 
-enum class HttpErrorCode(val code: Int) {
+enum class HttpErrorCode(val code: Int,val message:String ="") {
     /**
      * error in connecting to repository (Server or Database)
      */
@@ -44,5 +46,10 @@ enum class HttpErrorCode(val code: Int) {
     /**
      * Job Cancel
      */
-    JOB_CANCEL(1980)
+    JOB_CANCEL(1980),
+
+    /**
+     * Server Side Validation
+     */
+    SERVER_SIDE_VALIDATION(422)
 }

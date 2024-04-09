@@ -7,4 +7,103 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-</resources>
+    +13243546599
+        <!--text color-->
+        <color name="text_color">#4A4A68</color>
+        <color name="text_color_light">#504A4A68</color>
+        <color name="text_color_mid">#8C8CA1</color>
+        <color name="counter_text_color">#90FFFFFF</color>
+        <color name="disable_text_color">#8C8CA1</color>
+        <color name="disable_text_color_2">#979797</color>
+        <color name="disable_text_color_3">#FDFEFF</color>
+        <color name="disable_text_color4">#101010</color>
+        <color name="desc_text_color">#8C8CA2</color>
+        <color name="certificate_desc_text_color">#999999</color>
+        <color name="nav_drawer_icon_color">#8C8CA1</color>
+        <!--    <color name="nav_drawer_text_color">#60000000</color>-->
+        <color name="nav_drawer_text_color">#70000000</color>
+        <color name="screen_one_text_color">#6D6D78</color>
+        <color name="month_year_text_color">#323643</color>
+        <color name="profile_verifies_successful">#17BB94</color>
+        <color name="splash_bg_color">#0E0E2C</color>
+        <color name="disable_bg_color">#ECF1F4</color>
+        <color name="nav_drawer_selected_bg_color">#F1F3F5</color>
+        <color name="cardViewBGColor">#F2F2F2</color>
+        <color name="cardViewColor">#C4C4C4</color>
+        <color name="switch_bg_color">#DAD8D8</color>
+        <color name="facebook_bg_color">#4460A0</color>
+        <color name="btn_border_color">#D8D8D8</color>
+
+        <!--Color-->
+        <color name="light_black">#20000000</color>
+
+        <color name="grey">#DAD8D8</color>
+        <color name="medium_grey">#8c8c8c</color>
+        <color name="comment_light_grey_bg">#EFEFEF</color>
+        <color name="navdrawer_text_color">#60000000</color>
+        <color name="navdrawer_selectedbg_color">#F1F3F5</color>
+        <color name="active_user_color">#2CEFE3</color>
+        <color name="orange">#F67147</color>
+        <color name="green">#24B2B2</color>
+        <color name="green_new">#00BA00</color>
+        <color name="light_green">#5044D6D6</color>
+        <color name="light_grey">#ECF1F4</color>
+        <color name="red">#F25562</color>
+        <color name="red2">#EB5757</color>
+        <color name="otp_line_color">#9BA5FF</color>
+        <color name="img_not_verified">#FFC77F</color>
+        <color name="progress_view_border">#f3f3f3</color>
+
+        <color name="error">#B00020</color>
+        <color name="hint_color">#A1A1A1</color>
+        <color name="expire_date_hint_color">#B4B4B4</color>
+        <color name="stroke_color">#D8DCFF</color>
+        <color name="password_toggle">#DADADA</color>
+        <color name="greyToolBarColor">#F2F2F2</color>
+        <color name="scheduleShiftItemBGColor">#99F2F2F2</color>
+        <color name="frontDeskColor">#0062FF</color>
+        <color name="checkboxColor">#2091F9</color>
+        <color name="checkboxBorderColor">#C3D0DD</color>
+        <color name="dividerColor">#33000000</color>
+        <color name="dividerSearchColor">#19000000</color>
+        <color name="dividerColor2">#000000</color>
+        <color name="ratingBarColor">#F3CD03</color>
+        <color name="spinner_border_color">#E6E6E6</color>
+        <color name="light_primary">#E3F3FE</color>
+        <color name="indicator_color">#EAEAEA</color>
+        <color name="focus_indicator_color">#52C3FF</color>
+        <color name="screen_two_underline_color">#FC77A0</color>
+        <color name="screen_three_underline_color">#FFCB57</color>
+        <color name="arrow_down_color">#B1B1B1</color>
+        <color name="expand_arrow_color">#737373</color>
+        <color name="punch_clock_in_border_color">#50B547</color>
+        <color name="punch_clock_out_brorder_color">#FD554A</color>
+        <color name="outlineBorderColor">#ffffff</color>
+        <color name="jobRoleSpinnerBGColor">#F8FAFC</color>
+        <color name="progressBGColor">#ffffff</color>
+        <color name="assigned_color">#FFB800</color>
+        <color name="pending_color">#0172C0</color>
+        <color name="accepted_color">#3CCA0A</color>
+        <color name="rejected_color">#DC1F27</color>
+
+        <color name="pending_review_status_color">#FFBA69</color>
+        <color name="pending_review_color">#FFAE0F</color>
+        <color name="transperentColor">#00000000</color>
+        <color name="punctuality_icon_start_color">#3B11E0</color>
+        <color name="punctuality_icon_end_color">#BBAAFF</color>
+        <color name="presentable_icon_start_color">#2CEFE3</color>
+        <color name="presentable_icon_end_color">#B4FFFA</color>
+        <color name="knowledge_of_system_icon_start_color">#EFCB0F</color>
+        <color name="knowledge_of_system_icon_end_color">#F9ECA8</color>
+
+        <color name="color_shadow_start">#40C1C1C1</color>
+        <color name="color_shadow_end">#0AFFFFFF</color>
+        <color name="color_D5D5D5">#D5D5D5</color>
+        <color name="color_404040">#404040</color>
+        <color name="color_white69">#B0FFFFFF</color>
+        <color name="color_gray_disabled">#EAEAEA</color>
+        <color name="color_chat_divide">#D1D1D1</color>
+        <color name="color_chat_initials_bg">#D8EAFF</color>
+        <color name="color_chat_receiver_bg">#dfe1e2</color>
+    </resources>
+

@@ -1,4 +1,4 @@
-mutation createAccount($input: SignUpInput!) {
+mutation signup($input: SignUpInput!) {
     signup(input: $input){
         data{
             uuid

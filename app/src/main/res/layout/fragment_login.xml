@@ -4,7 +4,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+        <variable
+            name="loginHandler"
+            type="com.base.hilt.ui.login.LoginHandler" />
 
+        <variable
+            name="validatorData"
+            type="com.base.hilt.ui.login.LoginValidator" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -19,7 +25,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinssemibold"
             android:textColor="@color/black"
-            android:text="Login"
+            android:text="@string/login"
             android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
             android:textSize="40sp"
@@ -32,7 +38,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
-            android:text="Welcome to the tremendous world of Graph QL!"
+            android:text="@string/welcome_to_the_tremendous_world_of_graph_ql"
             android:layout_marginStart="20dp"
             android:layout_marginTop="60dp"
             android:textSize="30sp"
@@ -44,7 +50,7 @@
             style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="User Name"
+            android:hint="@string/mobile_number"
             android:textColorHint="@color/black"
             android:layout_margin="20dp"
             app:boxBackgroundColor="@color/white"
@@ -56,8 +62,11 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etUserName"
                 android:maxLines="1"
+                android:inputType="phone"
+                android:maxLength="12"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@={validatorData.username}"
                 android:fontFamily="@font/poppins_medium"
                 android:textColor="@color/black" />
 
@@ -68,7 +77,7 @@
             style="?attr/textInputFilledStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="@string/password"
             android:textColorHint="@color/black"
             android:layout_margin="20dp"
             app:endIconMode="password_toggle"
@@ -81,6 +90,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etPassword"
                 android:maxLines="1"
+                android:text="@={validatorData.password}"
                 android:inputType="textPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -96,7 +106,8 @@
             android:layout_margin="20dp"
             android:background="@drawable/gradient"
             android:fontFamily="@font/poppinssemibold"
-            android:text="Login"
+            android:text="@string/login"
+            android:onClick="@{()->loginHandler.onLoginClick(validatorData)}"
             android:textColor="@color/white"
             app:backgroundTint="@null"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,7 +120,8 @@
             android:fontFamily="@font/poppins_medium"
             android:textColor="@color/black"
             android:textSize="20sp"
-            android:text="create Account"
+            android:text="@string/create_account"
+            android:onClick="@{()->loginHandler.navigateToCreateAccount()}"
             android:gravity="center"
             app:layout_constraintTop_toBottomOf="@id/btnLogin"
             app:layout_constraintBottom_toBottomOf="parent"
