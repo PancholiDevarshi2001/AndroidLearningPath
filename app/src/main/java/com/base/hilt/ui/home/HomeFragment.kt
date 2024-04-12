@@ -29,7 +29,13 @@ class HomeFragment : FragmentBase<ViewModelBase, FragmentHomeBinding>() {
     override fun initializeScreenVariables() {
         observeData()
         getDataBinding().btn.setOnClickListener{
-            findNavController().navigate(R.id.action_navigation_home_to_loginFragment)
+            findNavController().navigate(R.id.flowApiCallFragment)
+        }
+        getDataBinding().btn2.setOnClickListener{
+            findNavController().navigate(R.id.operatorsFlowFragment)
+        }
+        getDataBinding().btn3.setOnClickListener{
+            findNavController().navigate(R.id.stateSharedFlowFragment)
         }
     }
 

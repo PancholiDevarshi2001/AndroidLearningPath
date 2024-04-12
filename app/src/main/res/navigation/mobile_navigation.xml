@@ -11,8 +11,14 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_navigation_home_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_navigation_home_to_flowApiCallFragment"
+            app:destination="@id/flowApiCallFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_operatorsFlowFragment"
+            app:destination="@id/operatorsFlowFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_stateSharedFlowFragment"
+            app:destination="@id/stateSharedFlowFragment" />
     </fragment>
 
     <fragment
@@ -63,4 +69,16 @@
             android:id="@+id/action_createAccountFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/flowApiCallFragment"
+        android:name="com.base.hilt.ui.FlowApiCall.FlowApiCallFragment"
+        android:label="FlowApiCallFragment" />
+    <fragment
+        android:id="@+id/operatorsFlowFragment"
+        android:name="com.base.hilt.ui.operator.OperatorsFlowFragment"
+        android:label="OperatorsFlowFragment" />
+    <fragment
+        android:id="@+id/stateSharedFlowFragment"
+        android:name="com.base.hilt.ui.stateshared.StateSharedFlowFragment"
+        android:label="StateSharedFlowFragment" />
 </navigation>

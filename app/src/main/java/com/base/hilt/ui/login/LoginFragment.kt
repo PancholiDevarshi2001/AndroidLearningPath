@@ -40,7 +40,9 @@ class LoginFragment : FragmentBase<LoginViewModel, FragmentLoginBinding>() {
     }
 
     override fun initializeScreenVariables() {
-
+getDataBinding().tvLogin.setOnClickListener{
+    findNavController().navigate(R.id.action_loginFragment_to_navigation_home)
+}
         getDataBinding().loginHandler = LoginHandler(this@LoginFragment)
         getDataBinding().validatorData = LoginValidator()
 //        getDataBinding().btnLogin.setOnClickListener {

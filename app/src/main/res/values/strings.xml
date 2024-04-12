@@ -35,5 +35,10 @@
     <string name="password_mismatch_error">Password and confirm password do not match</string>
     <string name="please_enter_email">please enter email</string>
     <string name="email_invalid_format_error">email improper</string>
+    <string name="the_comparison_between_livedata_stateflow_shared_flow_amp_normal_flow"><![CDATA[The Comparison between Livedata Stateflow Shared flow & Normal flow]]></string>
+    <string name="livedata">LiveData</string>
+    <string name="stateflow">StateFlow</string>
+    <string name="sharedflow">SharedFlow</string>
+    <string name="flow">Flow</string>
 
 </resources>

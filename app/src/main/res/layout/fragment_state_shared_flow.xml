@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.base.hilt.ui.stateshared.StateSharedViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.stateshared.StateSharedFlowFragment">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvHeading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_10sdp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:text="@string/the_comparison_between_livedata_stateflow_shared_flow_amp_normal_flow"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvLiveData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@id/tvStateFlow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLiveData"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="44dp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/poppinssemibold"
+            android:onClick="@{()->viewModel.triggerLiveData()}"
+            android:text="@string/login"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@id/tvLiveData"
+            app:layout_constraintStart_toStartOf="@id/tvLiveData"
+            app:layout_constraintTop_toBottomOf="@id/tvLiveData" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvStateFlow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvLiveData"
+            app:layout_constraintTop_toBottomOf="@id/tvHeading" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStateFlow"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/poppinssemibold"
+            android:onClick="@{()->viewModel.stateFlowLiveData()}"
+            android:text="@string/stateflow"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvStateFlow"
+            app:layout_constraintTop_toTopOf="@id/btnLiveData"
+            app:layout_constraintBottom_toBottomOf="@id/btnLiveData"
+            />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFlow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toStartOf="@id/tvStateFlow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnLiveData" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFlow"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="44dp"
+            android:layout_marginVertical="@dimen/_20sdp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/poppinssemibold"
+            android:text="@string/flow"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="@id/tvFlow"
+            app:layout_constraintStart_toStartOf="@id/tvFlow"
+            app:layout_constraintTop_toBottomOf="@id/tvFlow" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvSharedFlow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/poppinssemibold"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvFlow"
+            app:layout_constraintTop_toBottomOf="@id/btnStateFlow" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSharedFlow"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="@drawable/gradient"
+            android:fontFamily="@font/poppinssemibold"
+            android:onClick="@{()->viewModel.triggerSharedFlow()}"
+            android:text="@string/sharedflow"
+            android:textColor="@color/white"
+            app:backgroundTint="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvSharedFlow"
+            app:layout_constraintTop_toTopOf="@id/btnFlow"
+            app:layout_constraintBottom_toBottomOf="@id/btnFlow"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
