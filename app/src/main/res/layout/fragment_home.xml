@@ -33,7 +33,13 @@
             android:layout_height="@dimen/_130sdp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
-
+        <Button
+            android:id="@+id/btnNotification"
+            android:layout_width="@dimen/_130sdp"
+            android:text="notification permission"
+            android:layout_height="@dimen/_130sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
